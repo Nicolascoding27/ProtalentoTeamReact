@@ -17,7 +17,10 @@ class App extends  Component{
         }
     }
     onSearchChange(event){ //name of a function 
-        console.log(event)
+        const filteredRobots=this.state.robots.filter(robots=>{
+            return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        })//it does the comparison between what the user types and what is in the array, always to lowercase so we dont have problems with the input
+        console.log(filteredRobots)
     }
     render(){
         return(
