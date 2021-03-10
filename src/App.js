@@ -18,17 +18,18 @@ class App extends  Component{
     }
     onSearchChange= (event)=> { //name of a function ON SEARCHCHANE
         this.setState({searchfield:event.target.value})    //method to change state 
-        const filteredRobots=this.state.robots.filter(robots=>{
-            return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
-        })//it does the comparison between what the user types and what is in the array, always to lowercase so we dont have problems with the input
-        console.log(filteredRobots)
     }
     render(){
+        const filteredRobots=this.state.robots.filter(robots=>{
+         return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        })//it does the comparison between what the user types and what is in the array, always to lowercase so we dont have problems with the input
         return(
             <div class="tc">
             <h1>RoboFriends</h1>
             <SearchBox searchChange={this.onSearchChange}/>
-            <Cardlist robots={this.state.robots} />
+            {/* Now we can add filteredRobots as a prop because is inside the render function 
+             */}
+            <Cardlist robots={filteredRobots} /> 
             </div>
         )  
     }
