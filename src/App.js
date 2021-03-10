@@ -26,7 +26,7 @@ class App extends  Component{
         })//it does the comparison between what the user types and what is in the array, always to lowercase so we dont have problems with the input
         return(
             <div class="tc">
-            <h1>Protalento team</h1>
+            <h1 className="f2">Protalento team</h1>
             <SearchBox searchChange={this.onSearchChange}/>
             {/* Now we can add filteredRobots as a prop because is inside the render function 
              */}
