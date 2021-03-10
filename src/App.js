@@ -13,10 +13,11 @@ class App extends  Component{
         super()//calls the constructor of component
         this.state={
                 robots:robots,
-                searchfield:''
+                searchfield:'' //right now it's an empty string
         }
     }
-    onSearchChange= (event)=> { //name of a function 
+    onSearchChange= (event)=> { //name of a function ON SEARCHCHANE
+        this.setState({searchfield:event.target.value})    //method to change state 
         const filteredRobots=this.state.robots.filter(robots=>{
             return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
         })//it does the comparison between what the user types and what is in the array, always to lowercase so we dont have problems with the input
